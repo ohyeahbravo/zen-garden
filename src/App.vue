@@ -69,9 +69,9 @@ function selectGrid(gridNum: number) {
     } else {
       grid.value[gridNum - 1] = selectedPattern.value;
     }
-    if (selectedPattern.value !== 7) {
-      selectedPattern.value = 0;
-    }
+    // if (selectedPattern.value !== 7) {
+    //   selectedPattern.value = 0;
+    // }
   }
 }
 </script>
