@@ -42,6 +42,7 @@ function useWind() {
 
 function selectGrid(gridNum: number) {
   if (selectedPattern.value > 0) {
+    // laying a stone
     if (selectedPattern.value === 7) {
       const existingStones: number[] = [];
       grid.value.forEach((g: number, gridIndex: number) => {
@@ -50,8 +51,19 @@ function selectGrid(gridNum: number) {
         }
       });
       if (existingStones.length < 4) {
-        // TODO: not on the same the row or the column
-        grid.value[gridNum - 1] = 7;
+        const quotient = Math.floor((gridNum - 1) / 4);
+        const remainder = gridNum % 4;
+        // only place the stone if there is no stone on the same row or column
+        if (
+          existingStones.find(
+            (laidStone: number) =>
+              (laidStone + 1) % 4 === remainder ||
+              (quotient * 4 + 1 <= laidStone + 1 &&
+                quotient * 4 + 4 >= laidStone + 1)
+          ) === undefined
+        ) {
+          grid.value[gridNum - 1] = 7;
+        }
       }
       console.log(existingStones);
     } else {
@@ -136,7 +148,7 @@ function selectGrid(gridNum: number) {
         </div>
       </div>
       <div v-else class="h-[7vw]"></div>
-      <div class="flex flex-row space-x-10">
+      <div class="pb-10 flex flex-row space-x-10">
         <button class="w-[6vw] h-[6vw]" @click.prevent="useBroomstick">
           <img
             :class="
