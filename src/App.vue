@@ -80,13 +80,13 @@ function selectGrid(gridNum: number) {
   <div
     @mouseenter="infoOpen = true"
     @mouseleave="infoOpen = false"
-    class="z-10 text-black font-light text-[4vw] absolute left-[3vw] top-[1.5vw]"
+    class="z-10 text-black font-light text-[2vw] absolute left-[3vw] top-[1.5vw]"
   >
     ?
   </div>
   <div
     v-if="infoOpen"
-    class="z-10 w-[360px] bg-white absolute left-[3vw] top-[8vw] text-black text-[1.2vw] rounded-[25px] border border-black px-5 py-5 shadow-lg shadow-gray-400"
+    class="z-10 w-[360px] leading-tight bg-white absolute left-[2.5vw] top-[5.5vw] text-black text-[0.8vw] rounded-[25px] border border-black px-5 py-5 shadow-lg shadow-gray-400"
   >
     <p>
       This is Kare-san-sui(Zen garden), one of the Japanese garden styles
@@ -97,13 +97,13 @@ function selectGrid(gridNum: number) {
       Gardens. And sraw waves of different shapes in the garden. <br />
     </p>
     <p class="mt-20">
-      Bauhaus-Universität Weimar <br />Visuelle Kommunikation WiSe 22/23 Trust
-      your (Graphical) System <br />Prof. Markus Weisbeck, Adrian Palko<br />
+      Bauhaus-Universität Weimar <br />Visuelle Kommunikation WiSe 22/23<br />
+      Trust your (Graphical) System <br />Prof. Markus Weisbeck, Adrian Palko<br />
       Yunseon Yang <br />Web Development by Hiyeon Kim
     </p>
   </div>
   <div class="h-screen w-screen flex flex-col items-center bg-transparent">
-    <div class="text-black font-light italic text-[6vw] mt-[3vw] shrink-0">
+    <div class="text-black font-light italic text-[3vw] mt-[2vw] shrink-0">
       Zen Garden
     </div>
     <div
@@ -135,7 +135,7 @@ function selectGrid(gridNum: number) {
         class="h-[7vw] flex items-center justify-center"
       >
         <div
-          class="border border-black rounded-[25px] flex flex-row space-x-3 px-7 py-5"
+          class="border border-black rounded-[25px] flex flex-row space-x-3 px-7 py-5 shadow-lg shadow-gray-400"
         >
           <button
             v-for="index in 6"
