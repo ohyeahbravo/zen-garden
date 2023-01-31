@@ -86,7 +86,7 @@ function selectGrid(gridNum: number) {
   </div>
   <div
     v-if="infoOpen"
-    class="z-10 w-[360px] leading-tight bg-white absolute left-[2.5vw] top-[5.5vw] text-black text-[0.8vw] rounded-[25px] border border-black px-5 py-5 shadow-lg shadow-gray-400"
+    class="z-10 w-[360px] leading-tight bg-white absolute left-[2.5vw] top-[5.2vw] text-black text-[0.8vw] rounded-[25px] border border-black px-5 py-5 shadow-lg shadow-gray-400"
   >
     <p>
       This is Kare-san-sui(Zen garden), one of the Japanese garden styles
@@ -103,11 +103,11 @@ function selectGrid(gridNum: number) {
     </p>
   </div>
   <div class="h-screen w-screen flex flex-col items-center bg-transparent">
-    <div class="text-black font-light italic text-[3vw] mt-[2vw] shrink-0">
+    <div class="text-black font-light italic text-[4vw] mt-[2vw] shrink-0">
       Zen Garden
     </div>
     <div
-      class="grow w-full flex flex-col items-center justify-center space-y-[3vw]"
+      class="grow w-full flex flex-col items-center justify-center space-y-[2.5vw]"
     >
       <div
         class="grid grid-rows-4 grid-flow-col border border-t-black border-l-black"
@@ -116,7 +116,7 @@ function selectGrid(gridNum: number) {
           @click.prevent="selectGrid(index)"
           v-for="index in 12"
           :key="index"
-          class="border-r border-b border-r-black border-b-black w-[6vw] h-[6vw]"
+          class="border-r border-b border-r-black border-b-black w-[5.5vw] h-[5.5vw]"
         >
           <img
             v-if="grid[index - 1] === 7"
@@ -132,7 +132,7 @@ function selectGrid(gridNum: number) {
       </div>
       <div
         v-if="selectedAction === 'broomstick'"
-        class="h-[7vw] flex items-center justify-center"
+        class="h-[6vw] flex items-center justify-center"
       >
         <div
           class="border border-black rounded-[25px] flex flex-row space-x-3 px-7 py-5 shadow-lg shadow-gray-400"
@@ -140,14 +140,14 @@ function selectGrid(gridNum: number) {
           <button
             v-for="index in 6"
             :key="index"
-            class="w-[5vw] h-[5vw]"
+            class="w-[4.8vw] h-[4.8vw]"
             @click.prevent="selectPattern(index)"
           >
             <img :src="imageUrl(`/patterns/pattern_${index}.png`)" />
           </button>
         </div>
       </div>
-      <div v-else class="h-[7vw]"></div>
+      <div v-else class="h-[6vw]"></div>
       <div class="pb-10 flex flex-row space-x-10">
         <button class="w-[6vw] h-[6vw]" @click.prevent="useBroomstick">
           <img
